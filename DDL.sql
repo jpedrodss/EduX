@@ -68,8 +68,7 @@ CREATE TABLE Objetivo(
 	IdObjetivo INT IDENTITY PRIMARY KEY NOT NULL,
 	Titulo VARCHAR(50) NOT NULL,
 	Descricao VARCHAR(255) NOT NULL,
-	DataLimite DATETIME NOT NULL,
-	StatusObjetivo BIT DEFAULT 0, 
+	DataLimite DATETIME NOT NULL, 
 
 	IdCategoria INT FOREIGN KEY REFERENCES Categoria(IdCategoria) NOT NULL,
 	IdProfTurma INT FOREIGN KEY REFERENCES ProfTurma(IdProfTurma) NOT NULL
@@ -79,6 +78,7 @@ CREATE TABLE ObjetivoAluno(
 	IdObjetivoAluno INT IDENTITY PRIMARY KEY NOT NULL,
 	Nota INT DEFAULT 0,
 	DataEntrega DATETIME
+	StatusObjetivo BIT DEFAULT 0
 )
 
 CREATE TABLE Post(
