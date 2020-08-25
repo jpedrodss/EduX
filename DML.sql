@@ -1,3 +1,4 @@
+USE Edux
 
 --Inserindo valores nos atributos de TipoUsuario
 INSERT INTO TipoUsuario (Tipo) VALUES 
@@ -54,9 +55,9 @@ INSERT INTO Post (Imagem, Descricao, Curtidas) VALUES
 
 
 --Inserindo valores nos atributos de Objetivo	
-INSERT INTO Objetivo (Titulo, Descricao, DataEntrega, DataLimite) VALUES
-                  ('Aplicacao','Utilizar tipos de dados para definicao dos atributos do banco de dados','2020-09-02T00:00:00','2020-09-06T00:00:00'),
-				  ('Capacidade','Utilizar relacionamentos entre as tabelas do banco de dados','2020-03-06T00:00:00','2020-09-015T00:00:00');
+INSERT INTO Objetivo (Titulo, Descricao, DataLimite) VALUES
+                  ('Aplicacao','Utilizar tipos de dados para definicao dos atributos do banco de dados','2020-09-06T00:00:00'),
+				  ('Capacidade','Utilizar relacionamentos entre as tabelas do banco de dados','2020-09-015T00:00:00');
 
 
 
