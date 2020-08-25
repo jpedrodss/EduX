@@ -62,7 +62,7 @@ INSERT INTO Objetivo (Titulo, Descricao, DataEntrega, DataLimite) VALUES
 
 --Inserindo valores nos atributos de Meta	
 INSERT INTO ObjetivoAluno (Nota, DataEntrega,StatusObjetivo) VALUES
-                  (100,'2020-08-26T00:00:00','Concluida'),
-				  (100,'2020-08-27T00:00:00','Concluida'),
-				  (100,'2020-09-05T00:00:00','Pendente'),
-				  (100,'2020-08-29T00:00:00','Pendente');
+                  (100,'2020-08-26T00:00:00',0),
+				  (100,'2020-08-27T00:00:00',0),
+				  (100,'2020-09-05T00:00:00',1),
+				  (100,'2020-08-29T00:00:00',1);
