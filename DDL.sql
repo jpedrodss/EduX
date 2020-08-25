@@ -77,7 +77,7 @@ CREATE TABLE Objetivo(
 CREATE TABLE ObjetivoAluno(
 	IdObjetivoAluno INT IDENTITY PRIMARY KEY NOT NULL,
 	Nota INT DEFAULT 0,
-	DataEntrega DATETIME
+	DataEntrega DATETIME,
 	StatusObjetivo BIT DEFAULT 0
 )
 
