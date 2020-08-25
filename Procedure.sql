@@ -8,4 +8,4 @@ SELECT IdUsuario, Nome
 FROM Usuario
 WHERE Nome = @CampoBusca
 
-EXECUTE Busca 'João'
+EXECUTE Busca 'Aline'

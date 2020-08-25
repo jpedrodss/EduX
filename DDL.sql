@@ -32,8 +32,8 @@ CREATE TABLE Usuario(
 	Email VARCHAR(100) NOT NULL,
 	Senha VARCHAR(100) NOT NULL,
 
-	IdTipoUsuario INT FOREIGN KEY REFERENCES TipoUsuario(IdTipoUsuario) NOT NULL,
-	IdInstituicao INT FOREIGN KEY REFERENCES Instituicao(IdInstituicao) NOT NULL
+	IdTipoUsuario INT FOREIGN KEY REFERENCES TipoUsuario(IdTipoUsuario),
+	IdInstituicao INT FOREIGN KEY REFERENCES Instituicao(IdInstituicao)
 )
 
 CREATE TABLE Turma(
@@ -42,21 +42,21 @@ CREATE TABLE Turma(
 	Semestre VARCHAR(100) NOT NULL,
 	Periodo VARCHAR (100) NOT NULL,
 
-	IdCurso INT FOREIGN KEY REFERENCES Curso(IdCurso) NOT NULL
+	IdCurso INT FOREIGN KEY REFERENCES Curso(IdCurso)
 )
 
 CREATE TABLE ProfTurma(
 	IdProfTurma INT IDENTITY PRIMARY KEY NOT NULL,
 
-	IdUsuario INT FOREIGN KEY REFERENCES Usuario(IdUsuario) NOT NULL,
-	IdTurma INT FOREIGN KEY REFERENCES Turma(IdTurma) NOT NULL,
+	IdUsuario INT FOREIGN KEY REFERENCES Usuario(IdUsuario),
+	IdTurma INT FOREIGN KEY REFERENCES Turma(IdTurma)
 )
 
 CREATE TABLE AlunoTurma(
 	IdAlunoTurma INT IDENTITY PRIMARY KEY NOT NULL,
 
-	IdUsuario INT FOREIGN KEY REFERENCES Usuario(IdUsuario) NOT NULL,
-	IdTurma INT FOREIGN KEY REFERENCES Turma(IdTurma) NOT NULL,
+	IdUsuario INT FOREIGN KEY REFERENCES Usuario(IdUsuario),
+	IdTurma INT FOREIGN KEY REFERENCES Turma(IdTurma)
 )
 
 CREATE TABLE Categoria(
@@ -69,10 +69,10 @@ CREATE TABLE Objetivo(
 	IdObjetivo INT IDENTITY PRIMARY KEY NOT NULL,
 	Titulo VARCHAR(50) NOT NULL,
 	Descricao VARCHAR(255) NOT NULL,
-	DataLimite DATETIME NOT NULL, 
+	DataLimite DATETIME NOT NULL,
 
-	IdCategoria INT FOREIGN KEY REFERENCES Categoria(IdCategoria) NOT NULL,
-	IdProfTurma INT FOREIGN KEY REFERENCES ProfTurma(IdProfTurma) NOT NULL
+	IdCategoria INT FOREIGN KEY REFERENCES Categoria(IdCategoria),
+	IdProfTurma INT FOREIGN KEY REFERENCES ProfTurma(IdProfTurma)
 )
 
 CREATE TABLE ObjetivoAluno(
@@ -81,7 +81,7 @@ CREATE TABLE ObjetivoAluno(
 	DataEntrega DATETIME,
 	StatusObjetivo BIT DEFAULT 0,
 
-	IdAlunoTurma INT FOREIGN KEY REFERENCES AlunoTurma(IdAlunoTurma) NOT NULL
+	IdAlunoTurma INT FOREIGN KEY REFERENCES AlunoTurma(IdAlunoTurma)
 )
 
 CREATE TABLE Post(
@@ -90,8 +90,8 @@ CREATE TABLE Post(
 	Descricao VARCHAR(255) NOT NULL,
 	Curtidas INT DEFAULT 0,
 
-	IdTurma INT FOREIGN KEY REFERENCES Turma(IdTurma) NOT NULL,
-	IdAlunoTurma INT FOREIGN KEY REFERENCES AlunoTurma(IdAlunoTurma) NOT NULL
+	IdTurma INT FOREIGN KEY REFERENCES Turma(IdTurma),
+	IdAlunoTurma INT FOREIGN KEY REFERENCES AlunoTurma(IdAlunoTurma)
 )
 
 CREATE TABLE Dica(
